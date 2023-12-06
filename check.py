@@ -64,9 +64,4 @@ if __name__ == "__main__":
     results = check_hostname(args.hostname, dns_servers, args.record_type)
 
     for name, result in results.items():
-        if args.record_type == "A":
-            print(f"DNS Server: {name} | IP Address: {', '.join(result)}")
-        elif args.record_type == "NS":
-            print(f"DNS Server: {name} | NS Records: {', '.join(result)}")
-        elif args.record_type == "CNAME":
-            print(f"DNS Server: {name} | CNAME Records: {', '.join(result)}")
+        print(f"{name}: {', '.join(result)}")
